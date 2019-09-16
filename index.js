@@ -23,5 +23,5 @@ app.get('/Pin_Restaurant', function(req, res){
 }); 
 
 app.get('/History', function(req, res){
-    res.sendFile(path.join(__dirname + '/History'));
+    res.sendFile(path.join(__dirname + '/History.html'));
 }); 
