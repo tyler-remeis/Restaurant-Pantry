@@ -7,5 +7,5 @@ app.listen(process.env.PORT || 3000, function(){
   });
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(C:\Users\Tyler Remeis\Desktop\Microsoft DEV Courses\Microsoft DEV284x\PantryApp + '/Login.html'));
+    res.sendFile(path.join(__dirname + '/Login.html'));
 }); 
