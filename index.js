@@ -2,21 +2,6 @@ var express = require('express');
 var path = require('path'); //allowing html files to get sent to url
 var app = express();
 
-//Hopefully setting up MongoDB
-const mongoose = require('mongoose');
-const CONNECTION_URI = process.env.MONGODB_URI || 'mongodb://localhost/users';
-mongoose.Promist = global.Promise;
-mongoose.set('debug', true);
-mongoose
-    .connect(CONNECTION_URI, {
-        useMongoClient: true
-    })
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch(err => console.log(err));
-
-
 //Connecting style sheet
 app.use(express.static(path.join(__dirname +'/public'))); 
 
