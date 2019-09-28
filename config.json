@@ -1,0 +1,4 @@
+{
+    "connectionString": "mongodb://heroku_pb7h12dm:<dbpassword>@ds135486.mlab.com:35486/heroku_pb7h12dm",
+    "secret": "Green"
+}
