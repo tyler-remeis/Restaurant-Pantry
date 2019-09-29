@@ -26,7 +26,6 @@ function register(req, res, next) {
 }
 
 function getAll(req, res, next) {
-    res.sendFile(path.join(__dirname + '/Login.html'));
     userService.getAll()
         .then(user => res.json(users))
         .catch(err => next(err));
