@@ -26,6 +26,10 @@ app.listen(process.env.PORT || 3000, function(){
 // api routes
 app.use('/users', require('./users/users.controller'));
 
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/Login.html'));
+});
+
 app.get('/Start', function(req, res){
     res.sendFile(path.join(__dirname + '/Start_Options.html'));
 }); 
