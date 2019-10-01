@@ -9,7 +9,7 @@ MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true }, function(e, c
 		console.log(e);
 	}	else{
 		db = client.db(process.env.DB_NAME);
-		accounts = db.collection('accounts');
+		accounts = db.collection('users');
 	// index fields 'user' & 'email' for faster new account validation //
 		accounts.createIndex({user: 1, email: 1});
 		console.log('mongo :: connected to database :: "'+process.env.DB_NAME+'"');
