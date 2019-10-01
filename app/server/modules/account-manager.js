@@ -4,11 +4,11 @@ const moment 		= require('moment');
 const MongoClient 	= require('mongodb').MongoClient;
 
 var db, accounts;
-MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true }, function(e, client) {
+MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true }, function(e, db) {
 	if (e){
 		console.log(e);
 	}	else{
-		db = client.db(process.env.DB_NAME);
+		
 		accounts = db.collection('users');
 	// index fields 'user' & 'email' for faster new account validation //
 		accounts.createIndex({user: 1, email: 1});

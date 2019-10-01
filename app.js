@@ -24,7 +24,7 @@ process.env.DB_PORT = process.env.DB_PORT || 35486;
 process.env.DB_NAME = process.env.DB_NAME || 'heroku_pb7h12dm';
 
 if (app.get('env') != 'live'){
-	process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT;
+	process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT+'/'+process.env.DB_NAME;
 }	else {
 // prepend url with authentication credentials // 
 	process.env.DB_URL = 'mongodb://'+process.env.DB_USER+':'+process.env.DB_PASS+'@'+process.env.DB_HOST+':'+process.env.DB_PORT;
