@@ -3,17 +3,17 @@ const crypto 		= require('crypto');
 const moment 		= require('moment');
 const MongoClient 	= require('mongodb').MongoClient;
 
-var db, db.collection;
+var db, accounts;
 MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true }, function(e, db) {
 	if (e){
 		console.log(e);
 	}	else{
-		
-	db.collection = function ('users') {
+		db = client.db(process.env.DB_NAME)
+		accounts = db.collection('users')
 	// index fields 'user' & 'email' for faster new account validation //
-		db.collection.createIndex({user: 1, email: 1});
+		accounts.createIndex({user: 1, email: 1});
 		console.log('mongo :: connected to database :: "'+process.env.DB_NAME+'"');
-	}};
+	}
 });
 
 const guid = function(){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {var r = Math.random()*16|0,v=c=='x'?r:r&0x3|0x8;return v.toString(16);});}
