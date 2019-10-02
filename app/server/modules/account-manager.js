@@ -8,7 +8,7 @@ MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true }, function(e, d
 	if (e){
 		console.log(e);
 	}	else{
-		db = client.db(process.env.DB_NAME)
+		db = MongoClient.db(process.env.DB_NAME)
 		accounts = db.collection('users')
 	// index fields 'user' & 'email' for faster new account validation //
 		accounts.createIndex({user: 1, email: 1});
