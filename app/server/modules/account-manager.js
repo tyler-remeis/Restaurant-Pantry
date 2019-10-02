@@ -3,17 +3,17 @@ const crypto 		= require('crypto');
 const moment 		= require('moment');
 const MongoClient 	= require('mongodb').MongoClient;
 
-var db, accounts;
+var db, db.collection;
 MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true }, function(e, db) {
 	if (e){
 		console.log(e);
 	}	else{
 		
-		accounts = db.collection('users');
+	db.collection = function ('users') {
 	// index fields 'user' & 'email' for faster new account validation //
-		accounts.createIndex({user: 1, email: 1});
+		db.collection.createIndex({user: 1, email: 1});
 		console.log('mongo :: connected to database :: "'+process.env.DB_NAME+'"');
-	}
+	}};
 });
 
 const guid = function(){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {var r = Math.random()*16|0,v=c=='x'?r:r&0x3|0x8;return v.toString(16);});}
@@ -22,8 +22,7 @@ const guid = function(){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[
 	login validation methods
 */
 
-exports.autoLogin = function(user, pass, callback)
-{
+exports.autoLogin = function(user, pass, callback) {
 	accounts.findOne({user:user}, function(e, o) {
 		if (o){
 			o.pass == pass ? callback(o) : callback(null);
