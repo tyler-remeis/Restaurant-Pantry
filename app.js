@@ -26,6 +26,7 @@ process.env.MONGODB_URI = process.env.MONGODB_URI;
 
 if (app.get('env') != 'live'){
 	process.env.DB_URL = 'mongodb://'+process.env.DB_HOST+':'+process.env.DB_PORT+'/'+process.env.DB_NAME;
+	console.log(`line 29`)
 }	else {
 // prepend url with authentication credentials // 
 	process.env.MONGODB_URI;
