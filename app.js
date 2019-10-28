@@ -29,7 +29,7 @@ if (app.get('env') != 'live'){
 	console.log(`line 29`)
 }	else {
 // prepend url with authentication credentials // 
-	process.env.DB_URL = 'mongodb://'+process.env.DB_USER+':'+process.env.DB_PASS+'@'+process.env.DB_HOST+':'+process.env.DB_PORT;
+	process.env.DB_URL = 'mongodb://'+process.env.DB_USER+':'+process.env.DB_PASS+'@'+process.env.DB_HOST+':'+process.env.DB_PORT+'/'+process.env.DB_NAME;
 }
 
 app.use(session({
