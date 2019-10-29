@@ -15,7 +15,7 @@ EM.dispatchResetPasswordLink = function(account, callback)
 	EM.server.send({
 		from         : process.env.NL_EMAIL_FROM || 'Node Login <do-not-reply@gmail.com>',
 		to           : account.email,
-		subject      : 'Password Reset',
+		subject      : 'Password Reset- RestaurantPantry',
 		text         : 'something went wrong... :(',
 		attachment   : EM.composeEmail(account)
 	}, callback );
@@ -29,7 +29,7 @@ EM.composeEmail = function(o)
 		html += "Your username is <b>"+o.user+"</b><br><br>";
 		html += "<a href='"+baseurl+'/reset-password?key='+o.passKey+"'>Click here to reset your password</a><br><br>";
 		html += "Cheers,<br>";
-		html += "<a href='https://braitsch.io'>braitsch</a><br><br>";
+		html += "<a href='https://restaurantpantry.herokuapp.com'>Tyler Remeis</a><br><br>";
 		html += "</body></html>";
 	return [{data:html, alternative:true}];
 }
