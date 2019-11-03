@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    #startOptions.center-vertical
+        form.card.card-body.bg-light(method='post')
+            h2 Start Options
+            h6 Logging a restaurant denotes a place that you have been while pinning a restaurant is a place you would like to go to in the future.
+            hr
+            #startButtons
+				button(type='button')#btn_remember.btn.btn-light.btn-left
+					span.fa.fa-check-square
+					| Log Restaurant
+				button(type='submit')#btn_sign_in.btn.btn-primary
+					span.fa.fa-lock
+					| Pin Restaurant
