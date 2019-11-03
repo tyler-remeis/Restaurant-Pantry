@@ -59,7 +59,7 @@ module.exports = function(app) {
 		if (req.session.user == null){
 			res.redirect('/');
 		}	else{
-			res.render('home', {
+			res.render('startOptions', {
 				title : 'Control Panel',
 				countries : CT,
 				udata : req.session.user
